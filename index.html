@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h2>Candy</h2>
+<h3>Add candies by providing name image and description </h3>
+<div>
+    <form>
+        <label for="artsit"> Candy name</label>
+        <input type="text" name="name" id="name_input" required>
+        <label for="artsit">Candy image</label>
+        <input type="text" name="image_url" id="image_url_input" required>
+        <label for="artsit"> Candy description</label>
+        <input type="text" name="date" id="description_input" required>
+        <button class="submit">Submit</button>
+    </form>
+</div>
+
+<div style="display: grid; place-items: center;grid-template-columns: 1fr 1fr 1fr ;" class="main_section">
+</div>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script src="/index.js"></script>
+
+</body>
+
+</html>
