@@ -62,18 +62,16 @@ function delete_candy( details )
     } ).catch( ( error ) =>
     {
         // Display error message when failed to delete candy
-        let main_section = document.querySelector( `.main_section` )
-
-        main_section.insertAdjacentHTML(
-            `beforeend`, `<h3 class="error_display"> ${ error[`message`] } faild to delete candy' </h3>
-            `)
+        // If there was no error, remove the candy card from the DOM
+        if ( error )
+        {
+            main_section.insertAdjacentHTML(
+                `beforeend`, `<h3 class="error_display"> ${ error[`message`] } faild to delete candy' </h3>
+                `)
+        }
     } )
-    // If there was no error, remove the candy card from the DOM
-    if ( !error )
-    {
-        let candyCard = details.target.closest( `.candy_card` )
-        candyCard.remove()
-    }
+    let candyCard = details.target.closest( `.candy_card` )
+    candyCard.remove()
 
 }
 //function to post/add a candy to database
@@ -101,25 +99,16 @@ function post_candy()
     } ).then( ( response ) =>
     {
         // display success message when the request is successful 
-        let main_section = document.querySelector( `.main_section` )
-
         main_section.insertAdjacentHTML(
             `beforeend`, `<h3 class="error_display"> successfully added candy </h3>
         `)
-
-
     } ).catch( ( error ) =>
     {
         // display error message when the request is  not successful 
-        let main_section = document.querySelector( `.main_section` )
-
         main_section.insertAdjacentHTML(
             `beforeend`, `<h3 class="error_display"> ${ error[`message`] } faild to add candy' </h3>
             `)
-
     } )
-
-
 }
 // Add a click event listener to the submit button
 let get_submit = document.querySelector( '.submit' )
